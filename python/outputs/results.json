@@ -1,0 +1,577 @@
+{
+  "meta": {
+    "data_retrieved_on": "2026-09-28",
+    "panel_start": "2006-01-01",
+    "panel_end": "2026-07-01",
+    "n_months": 247,
+    "sources": [
+      {
+        "file": "fred_PCOPPUSDM.csv",
+        "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOPPUSDM",
+        "description": "Global price of copper, USD per metric ton, monthly (IMF via FRED)",
+        "status": "ok"
+      },
+      {
+        "file": "fred_CCUSMA02CLM618N.csv",
+        "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CCUSMA02CLM618N",
+        "description": "Chile national currency per USD, monthly average (OECD via FRED)",
+        "status": "ok"
+      },
+      {
+        "file": "fred_DTWEXBGS.csv",
+        "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS",
+        "description": "Nominal broad US dollar index, daily (Federal Reserve Board via FRED)",
+        "status": "ok"
+      },
+      {
+        "file": "bis_cbpol_CL.csv",
+        "url": "https://stats.bis.org/api/v2/data/dataflow/BIS/WS_CBPOL/1.0/M.CL?format=csv",
+        "description": "Chile central bank policy rate, monthly (BIS, source Banco Central de Chile)",
+        "status": "ok"
+      },
+      {
+        "file": "bis_cpi_CL.csv",
+        "url": "https://stats.bis.org/api/v2/data/dataflow/BIS/WS_LONG_CPI/1.0/M.CL.628?format=csv",
+        "description": "Chile consumer price index, monthly, index level (BIS long CPI series)",
+        "status": "ok"
+      },
+      {
+        "file": "imf_NGDP_RPCH.json",
+        "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH",
+        "description": "IMF World Economic Outlook DataMapper",
+        "status": "ok"
+      },
+      {
+        "file": "imf_PCPIPCH.json",
+        "url": "https://www.imf.org/external/datamapper/api/v1/PCPIPCH",
+        "description": "IMF World Economic Outlook DataMapper",
+        "status": "ok"
+      },
+      {
+        "file": "imf_GGXCNL_NGDP.json",
+        "url": "https://www.imf.org/external/datamapper/api/v1/GGXCNL_NGDP",
+        "description": "IMF World Economic Outlook DataMapper",
+        "status": "ok"
+      },
+      {
+        "file": "imf_GGXWDG_NGDP.json",
+        "url": "https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP",
+        "description": "IMF World Economic Outlook DataMapper",
+        "status": "ok"
+      }
+    ],
+    "failed_sources": [
+      {
+        "file": "yf_usdclp.csv",
+        "url": "yfinance USDCLP=X",
+        "description": "optional daily cross-check",
+        "status": "FAILED: empty (rate limited)"
+      },
+      {
+        "file": "yf_copper_futures.csv",
+        "url": "yfinance HG=F",
+        "description": "optional daily cross-check",
+        "status": "FAILED: empty (rate limited)"
+      },
+      {
+        "file": "yf_dxy.csv",
+        "url": "yfinance DX-Y.NYB",
+        "description": "optional daily cross-check",
+        "status": "FAILED: empty (rate limited)"
+      }
+    ]
+  },
+  "copper_peso": {
+    "sample": [
+      "2006-02-01",
+      "2026-07-01"
+    ],
+    "full": {
+      "n_obs": 246,
+      "r_squared": 0.5224172569244486,
+      "coef": {
+        "const": 0.22261738377182988,
+        "d_copper": -0.14969544631568482,
+        "d_dollar": 0.9802975155188209
+      },
+      "t_hc3": {
+        "const": 1.8098746846378606,
+        "d_copper": -4.949564841815576,
+        "d_dollar": 9.001957994323108
+      },
+      "p_hc3": {
+        "const": 0.07031522275016915,
+        "d_copper": 7.437959502759436e-07,
+        "d_dollar": 2.217273976378626e-19
+      }
+    },
+    "copper_only": {
+      "n_obs": 246,
+      "r_squared": 0.37353803438245936,
+      "coef": {
+        "const": 0.3448500223637333,
+        "d_copper": -0.26132274334652333
+      },
+      "t_hc3": {
+        "const": 2.384327627854949,
+        "d_copper": -6.61415694079682
+      },
+      "p_hc3": {
+        "const": 0.017110361685523674,
+        "d_copper": 3.7367514530261723e-11
+      }
+    },
+    "pre_split": {
+      "n_obs": 167,
+      "r_squared": 0.5050642939336887,
+      "coef": {
+        "const": 0.16477088812977778,
+        "d_copper": -0.12818701964572388,
+        "d_dollar": 0.9102753824061921
+      },
+      "t_hc3": {
+        "const": 1.1259764625704358,
+        "d_copper": -3.929533946198337,
+        "d_dollar": 6.205130396761637
+      },
+      "p_hc3": {
+        "const": 0.2601754823002813,
+        "d_copper": 8.511066129568456e-05,
+        "d_dollar": 5.465156883619792e-10
+      }
+    },
+    "post_split": {
+      "n_obs": 79,
+      "r_squared": 0.6151740643229083,
+      "coef": {
+        "const": 0.48226934873523847,
+        "d_copper": -0.2805202874648329,
+        "d_dollar": 1.0137003266009197
+      },
+      "t_hc3": {
+        "const": 2.1007612380884995,
+        "d_copper": -4.903691571658643,
+        "d_dollar": 4.802695340609985
+      },
+      "p_hc3": {
+        "const": 0.03566193065083027,
+        "d_copper": 9.405212826258351e-07,
+        "d_dollar": 1.565439770924676e-06
+      }
+    },
+    "split_date": "2020-01-01",
+    "rolling": {
+      "window_months": 60,
+      "n_windows": 187,
+      "beta_copper_min": -0.31419477927950645,
+      "beta_copper_max": -0.11754210660553899,
+      "beta_copper_latest": -0.31419477927950645,
+      "share_windows_significant_5pct": 0.9732620320855615,
+      "share_windows_beta_negative": 1.0
+    },
+    "granger": {
+      "copper_causes_clp": {
+        "1": 0.8340238382218319,
+        "2": 0.6453866555667902,
+        "3": 0.8684661826223634,
+        "4": 0.5462806969637175,
+        "5": 0.5090118321728282,
+        "6": 0.41938450659254606
+      },
+      "clp_causes_copper": {
+        "1": 0.14152487440428313,
+        "2": 0.3053008444163599,
+        "3": 0.456142309677975,
+        "4": 0.012628742631759041,
+        "5": 0.034459073551357224,
+        "6": 0.034446927101733485
+      }
+    }
+  },
+  "policy": {
+    "last_month": "2026-08-01",
+    "policy_rate": 4.5,
+    "cpi_yoy": 4.132155367835066,
+    "real_policy_rate": 0.36784463216493357,
+    "taylor_rate": 5.6982330517526,
+    "policy_minus_taylor": -1.1982330517525996,
+    "avg_real_rate_since": 0.12056597306490743,
+    "avg_start": "2010-01-01",
+    "cpi_yoy_max_last_24m": 4.935116014710594,
+    "cpi_yoy_min_last_24m": 2.370287424799389,
+    "policy_rate_12m_ago": 4.75,
+    "cpi_yoy_12m_ago": 4.0306366385325365,
+    "params": {
+      "target": 3.0,
+      "neutral_real_rate": 1.0,
+      "inflation_weight": 0.5,
+      "output_gap": "assumed zero"
+    },
+    "sensitivity": {
+      "0.5": -0.6982330517525996,
+      "1.0": -1.1982330517525996,
+      "1.5": -1.6982330517525996
+    }
+  },
+  "forecast": {
+    "lags": 2,
+    "min_train_months": 120,
+    "first_forecast_origin": "2016-02-01",
+    "sample_end": "2026-07-01",
+    "backtest": {
+      "inflation_cum_h1": {
+        "n_forecasts": 126,
+        "naive_definition": "last h-month inflation",
+        "rmse_model": 0.40273533442017606,
+        "rmse_naive": 0.5046950952893403,
+        "rmse_hist_mean": 0.41242911595127896,
+        "ratio_model_to_naive": 0.7979775079630782,
+        "beats_naive": true,
+        "dm_stat_vs_naive": -4.0191485344071625,
+        "dm_pvalue_vs_naive": 0.00010026039850297153
+      },
+      "usdclp_cum_h1": {
+        "n_forecasts": 126,
+        "naive_definition": "random walk (zero change)",
+        "rmse_model": 2.798991823419841,
+        "rmse_naive": 2.759946608164131,
+        "rmse_hist_mean": 2.760356381741299,
+        "ratio_model_to_naive": 1.0141470907952392,
+        "beats_naive": false,
+        "dm_stat_vs_naive": 0.35654454399559227,
+        "dm_pvalue_vs_naive": 0.7220339263722577
+      },
+      "inflation_cum_h3": {
+        "n_forecasts": 124,
+        "naive_definition": "last h-month inflation",
+        "rmse_model": 0.8298563911375538,
+        "rmse_naive": 0.812153471660177,
+        "rmse_hist_mean": 0.9015395232137781,
+        "ratio_model_to_naive": 1.0217975051454118,
+        "beats_naive": false,
+        "dm_stat_vs_naive": 0.17196561712713665,
+        "dm_pvalue_vs_naive": 0.8637471757241837
+      },
+      "usdclp_cum_h3": {
+        "n_forecasts": 124,
+        "naive_definition": "random walk (zero change)",
+        "rmse_model": 5.390541659140393,
+        "rmse_naive": 5.256377232846582,
+        "rmse_hist_mean": 5.261505679881298,
+        "ratio_model_to_naive": 1.0255241243827462,
+        "beats_naive": false,
+        "dm_stat_vs_naive": 0.5931714222092479,
+        "dm_pvalue_vs_naive": 0.5541555639268083
+      },
+      "inflation_cum_h12": {
+        "n_forecasts": 115,
+        "naive_definition": "last h-month inflation",
+        "rmse_model": 2.971788240547659,
+        "rmse_naive": 3.351226850199078,
+        "rmse_hist_mean": 3.0721596131685716,
+        "ratio_model_to_naive": 0.8867762086506086,
+        "beats_naive": true,
+        "dm_stat_vs_naive": -0.507382261748035,
+        "dm_pvalue_vs_naive": 0.6128667895572621
+      },
+      "usdclp_cum_h12": {
+        "n_forecasts": 115,
+        "naive_definition": "random walk (zero change)",
+        "rmse_model": 10.031909900250604,
+        "rmse_naive": 9.95215977663524,
+        "rmse_hist_mean": 9.76990669472468,
+        "ratio_model_to_naive": 1.0080133483992684,
+        "beats_naive": false,
+        "dm_stat_vs_naive": 0.11621220064300805,
+        "dm_pvalue_vs_naive": 0.9076888397557745
+      }
+    },
+    "lag_sensitivity_h12_ratio": {
+      "1": {
+        "inflation_cum_h12": 0.8756246431014078,
+        "usdclp_cum_h12": 1.0016504273141416
+      },
+      "2": {
+        "inflation_cum_h12": 0.8867762086506086,
+        "usdclp_cum_h12": 1.0080133483992684
+      },
+      "3": {
+        "inflation_cum_h12": 0.8714602485009424,
+        "usdclp_cum_h12": 1.0118299958869557
+      }
+    },
+    "scenarios": {
+      "origin": "2026-07-01",
+      "origin_usdclp": 931.3202,
+      "origin_copper": 13542.82086956522,
+      "base_copper_assumption": "held flat at last level",
+      "months": [
+        "2026-08-01",
+        "2026-09-01",
+        "2026-10-01",
+        "2026-11-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2027-02-01",
+        "2027-03-01",
+        "2027-04-01",
+        "2027-05-01",
+        "2027-06-01",
+        "2027-07-01"
+      ],
+      "lags": 2,
+      "copper_shock_pct": 20.0,
+      "cases": {
+        "base": {
+          "usdclp_path": [
+            937.7823466736984,
+            941.9594790830256,
+            945.1381341603101,
+            948.2697917233182,
+            951.3215062927934,
+            954.3753341606127,
+            957.4241234560851,
+            960.4786110171631,
+            963.5391297580062,
+            966.6077598924701,
+            969.6850440110568,
+            972.7715360018495
+          ],
+          "copper_path": [
+            13542.82086956522,
+            13542.82086956522,
+            13542.82086956522,
+            13542.82086956522,
+            13542.82086956522,
+            13542.82086956522,
+            13542.82086956522,
+            13542.82086956522,
+            13542.82086956522,
+            13542.82086956522,
+            13542.82086956522,
+            13542.82086956522
+          ],
+          "usdclp_end": 972.7715360018495,
+          "usdclp_change_pct": 4.450814660935043,
+          "copper_end": 13542.82086956522,
+          "copper_change_pct": 0.0,
+          "cpi_yoy_end_pct": 3.787985566129093,
+          "usdclp_band_low": 824.7863087267957,
+          "usdclp_band_high": 1147.3086437578672
+        },
+        "copper_down": {
+          "usdclp_path": [
+            942.5523335240346,
+            951.0491352143549,
+            958.166055263277,
+            965.1897897684006,
+            972.1711352948081,
+            979.1967020207765,
+            986.2617540594457,
+            993.3756602620234,
+            1000.5384701620019,
+            1007.7520043286913,
+            1015.0168574962356,
+            1022.3337373736215
+          ],
+          "copper_path": [
+            13293.315113849652,
+            13048.406119970838,
+            12808.0091996244,
+            12572.041224758406,
+            12340.420598828106,
+            12113.067228580258,
+            11889.902496357272,
+            11670.849232911627,
+            11455.831690721132,
+            11244.775517795802,
+            11037.607731967324,
+            10834.256695652175
+          ],
+          "usdclp_end": 1022.3337373736215,
+          "usdclp_change_pct": 9.772529080075953,
+          "copper_end": 10834.256695652175,
+          "copper_change_pct": -20.000000000000007,
+          "cpi_yoy_end_pct": 3.4641182533624804,
+          "usdclp_band_low": 866.8087401085875,
+          "usdclp_band_high": 1205.7634195536446
+        },
+        "copper_up": {
+          "usdclp_path": [
+            933.9029085048464,
+            934.5972158217023,
+            934.6251499170044,
+            934.665564760971,
+            934.6184860851985,
+            934.5625891350232,
+            934.4891108177097,
+            934.4101247645923,
+            934.3264400949828,
+            934.2405809936282,
+            934.1532886969734,
+            934.0652348337431
+          ],
+          "copper_path": [
+            13750.154286150972,
+            13960.661867561554,
+            14174.39220857971,
+            14391.394647948582,
+            14611.719279761339,
+            14835.416965025199,
+            15062.539343402465,
+            15293.138845131323,
+            15527.268703129157,
+            15764.982965281113,
+            16006.336506916849,
+            16251.385043478262
+          ],
+          "usdclp_end": 934.0652348337431,
+          "usdclp_change_pct": 0.2947466224552109,
+          "copper_end": 16251.385043478262,
+          "copper_change_pct": 19.999999999999996,
+          "cpi_yoy_end_pct": 4.0533568381942775,
+          "usdclp_band_low": 791.9682974225983,
+          "usdclp_band_high": 1101.6575609963552
+        }
+      },
+      "naive_usdclp": 931.3202,
+      "naive_cpi_yoy_pct": 3.526054167276982,
+      "copper_loading_fx": -0.2728411418861555,
+      "copper_loading_infl": -0.0018210022057756562,
+      "var_intercept_monthly": {
+        "infl": 0.17096648556819963,
+        "fx": -0.10380551328618477,
+        "cu": 1.3486403958761912
+      }
+    }
+  },
+  "comparison": {
+    "vintage": "World Economic Outlook (April 2026)",
+    "years": [
+      2026,
+      2027,
+      2028
+    ],
+    "rows": [
+      {
+        "indicator": "Real GDP growth (%)",
+        "country": "Chile",
+        "values": {
+          "2026": 2.4,
+          "2027": 2.6,
+          "2028": 2.3
+        }
+      },
+      {
+        "indicator": "Real GDP growth (%)",
+        "country": "Argentina",
+        "values": {
+          "2026": 3.5,
+          "2027": 4.0,
+          "2028": 3.8
+        }
+      },
+      {
+        "indicator": "Real GDP growth (%)",
+        "country": "Uruguay",
+        "values": {
+          "2026": 1.8,
+          "2027": 2.6,
+          "2028": 2.3
+        }
+      },
+      {
+        "indicator": "CPI inflation, average (%)",
+        "country": "Chile",
+        "values": {
+          "2026": 2.9,
+          "2027": 3.3,
+          "2028": 3.0
+        }
+      },
+      {
+        "indicator": "CPI inflation, average (%)",
+        "country": "Argentina",
+        "values": {
+          "2026": 30.4,
+          "2027": 15.7,
+          "2028": 9.6
+        }
+      },
+      {
+        "indicator": "CPI inflation, average (%)",
+        "country": "Uruguay",
+        "values": {
+          "2026": 4.0,
+          "2027": 4.5,
+          "2028": 4.5
+        }
+      },
+      {
+        "indicator": "General govt net lending/borrowing (% GDP)",
+        "country": "Chile",
+        "values": {
+          "2026": -2.5,
+          "2027": -1.9,
+          "2028": -1.8
+        }
+      },
+      {
+        "indicator": "General govt net lending/borrowing (% GDP)",
+        "country": "Argentina",
+        "values": {
+          "2026": 0.5,
+          "2027": 0.4,
+          "2028": 0.3
+        }
+      },
+      {
+        "indicator": "General govt net lending/borrowing (% GDP)",
+        "country": "Uruguay",
+        "values": {
+          "2026": -3.8,
+          "2027": -3.2,
+          "2028": -2.7
+        }
+      },
+      {
+        "indicator": "General govt gross debt (% GDP)",
+        "country": "Chile",
+        "values": {
+          "2026": 42.5,
+          "2027": 44.4,
+          "2028": 45.5
+        }
+      },
+      {
+        "indicator": "General govt gross debt (% GDP)",
+        "country": "Argentina",
+        "values": {
+          "2026": 70.4,
+          "2027": 68.1,
+          "2028": 63.0
+        }
+      },
+      {
+        "indicator": "General govt gross debt (% GDP)",
+        "country": "Uruguay",
+        "values": {
+          "2026": 66.8,
+          "2027": 67.7,
+          "2028": 68.2
+        }
+      }
+    ]
+  },
+  "levels": {
+    "usdclp_last": 931.3202,
+    "usdclp_min": 442.942,
+    "usdclp_max": 1000.1686826087,
+    "usdclp_max_month": "2025-01-01",
+    "copper_last": 13542.82086956522,
+    "copper_12m_change_pct": 38.60815086638751,
+    "usd_broad_12m_change_pct": 0.40325009937636214,
+    "usdclp_12m_change_pct": -2.3969328698989267,
+    "peso_move_implied_by_copper_beta_pct": -4.769762634668484
+  }
+}
