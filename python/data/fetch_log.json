@@ -1,0 +1,78 @@
+{
+  "retrieved_on": "2026-09-28",
+  "sources": [
+    {
+      "file": "fred_PCOPPUSDM.csv",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOPPUSDM",
+      "description": "Global price of copper, USD per metric ton, monthly (IMF via FRED)",
+      "status": "ok"
+    },
+    {
+      "file": "fred_CCUSMA02CLM618N.csv",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CCUSMA02CLM618N",
+      "description": "Chile national currency per USD, monthly average (OECD via FRED)",
+      "status": "ok"
+    },
+    {
+      "file": "fred_DTWEXBGS.csv",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS",
+      "description": "Nominal broad US dollar index, daily (Federal Reserve Board via FRED)",
+      "status": "ok"
+    },
+    {
+      "file": "bis_cbpol_CL.csv",
+      "url": "https://stats.bis.org/api/v2/data/dataflow/BIS/WS_CBPOL/1.0/M.CL?format=csv",
+      "description": "Chile central bank policy rate, monthly (BIS, source Banco Central de Chile)",
+      "status": "ok"
+    },
+    {
+      "file": "bis_cpi_CL.csv",
+      "url": "https://stats.bis.org/api/v2/data/dataflow/BIS/WS_LONG_CPI/1.0/M.CL.628?format=csv",
+      "description": "Chile consumer price index, monthly, index level (BIS long CPI series)",
+      "status": "ok"
+    },
+    {
+      "file": "imf_NGDP_RPCH.json",
+      "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH",
+      "description": "IMF World Economic Outlook DataMapper",
+      "status": "ok"
+    },
+    {
+      "file": "imf_PCPIPCH.json",
+      "url": "https://www.imf.org/external/datamapper/api/v1/PCPIPCH",
+      "description": "IMF World Economic Outlook DataMapper",
+      "status": "ok"
+    },
+    {
+      "file": "imf_GGXCNL_NGDP.json",
+      "url": "https://www.imf.org/external/datamapper/api/v1/GGXCNL_NGDP",
+      "description": "IMF World Economic Outlook DataMapper",
+      "status": "ok"
+    },
+    {
+      "file": "imf_GGXWDG_NGDP.json",
+      "url": "https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP",
+      "description": "IMF World Economic Outlook DataMapper",
+      "status": "ok"
+    },
+    {
+      "file": "yf_usdclp.csv",
+      "url": "yfinance USDCLP=X",
+      "description": "optional daily cross-check",
+      "status": "FAILED: empty (rate limited)"
+    },
+    {
+      "file": "yf_copper_futures.csv",
+      "url": "yfinance HG=F",
+      "description": "optional daily cross-check",
+      "status": "FAILED: empty (rate limited)"
+    },
+    {
+      "file": "yf_dxy.csv",
+      "url": "yfinance DX-Y.NYB",
+      "description": "optional daily cross-check",
+      "status": "FAILED: empty (rate limited)"
+    }
+  ],
+  "imf_weo_vintage": "World Economic Outlook (April 2026)"
+}
